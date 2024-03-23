@@ -1,0 +1,24 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2024-03-23T12:28:54+09:00",
+  "id": "led-quiz",
+  "duration": 15,
+  "title": "연주에 맞게 LED 켜보기",
+  "summary": "연주에 맞게 LED 켜보기",
+  "source": ".\\_article\\06_led_quiz\\06_led_quiz.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "codelab"
+  ],
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/msaltnet/coding-camp",
+  "url": "led-quiz"
+}
