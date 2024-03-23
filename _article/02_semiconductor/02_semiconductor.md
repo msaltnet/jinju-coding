@@ -4,7 +4,7 @@ id: semiconductor
 categories: codelab
 environments: Web
 status: Published
-feedback link: https://github.com/msaltnet/coding-camp
+feedback link: https://github.com/msaltnet/jinju-coding
 
 # 전기와 반도체 그리고 프로그래밍
 

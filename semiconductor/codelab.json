@@ -3,7 +3,7 @@
   "format": "html",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2024-03-23T12:24:04+09:00",
+  "updated": "2024-03-23T15:01:36+09:00",
   "id": "semiconductor",
   "duration": 15,
   "title": "전기와 반도체 그리고 프로그래밍",
@@ -19,6 +19,6 @@
   "tags": [
     "web"
   ],
-  "feedback": "https://github.com/msaltnet/coding-camp",
+  "feedback": "https://github.com/msaltnet/jinju-coding",
   "url": "semiconductor"
 }

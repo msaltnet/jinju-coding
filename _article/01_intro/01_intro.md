@@ -4,7 +4,7 @@ id: introduce
 categories: codelab
 environments: Web
 status: Published
-feedback link: https://github.com/msaltnet/coding-camp
+feedback link: https://github.com/msaltnet/jinju-coding
 
 # 강의 소개
 

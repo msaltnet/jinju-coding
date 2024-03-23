@@ -3,7 +3,7 @@
   "format": "html",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2024-03-22T22:21:06+09:00",
+  "updated": "2024-03-23T15:01:38+09:00",
   "id": "introduce",
   "duration": 10,
   "title": "강의 소개",
@@ -19,6 +19,6 @@
   "tags": [
     "web"
   ],
-  "feedback": "https://github.com/msaltnet/coding-camp",
+  "feedback": "https://github.com/msaltnet/jinju-coding",
   "url": "introduce"
 }

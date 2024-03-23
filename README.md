@@ -4,7 +4,7 @@
 
 전기와 반도체 그리고 프로그래밍에 대해서 알아보고, 직접 회로와 프로그램을 만들어보자.
 
-![jinju](./intro.png)
+![jinju](./intro.jpg)
 
 ## 강의 프로그램
 1. [강의 소개 (10분)](./introduce)
@@ -14,24 +14,25 @@
  - 버튼을 눌러서 소리를 내보자
 1. [LED 켜보기 (15분)](./led)
  - LED에 대해서 알아보고 회로를 통해 빛을 내보자
-1. [버튼으로 노래 연주하기 (15분)](./play-button)
+1. [버튼으로 노래 연주하기 (20분)](./play-button)
  - 버튼을 누르면 노래가 연주되는 프로그램을 만들어보자
-1. 마무리 (10분)
+1. 마무리 (5분)
  - 집으로 돌아 가서도 도전은 계속된다!
 
-## 도전과제
-- [연주에 맞게 LED 켜보기](./led-quiz) - 노래가 연주 될 때 LED도 켜지게 해보자
+## 도전 과제
 - [적외선 센서로 LED 켜보기](./infrared) - 사람이 지나가면 불이 켜지게 해보자
 - [적외선 센서로 노래 연주하기](./infrared-play) - 사람이 들어오면 멜로디 소리가 나게 해보자
 
 ## 사용된 부품 및 가격
-- [RC카 기본 세트 - 47,850원](https://www.devicemart.co.kr/goods/view?no=1385495)
-- [초음파 센서 브라켓 - 495원](https://www.devicemart.co.kr/goods/view?no=1323060)
-- [초음파 센서 - 1,430원](https://www.devicemart.co.kr/goods/view?no=1076851)
-- [LED 녹색 - 77원](https://www.devicemart.co.kr/goods/view?no=2853)
-- [LED 빨간색 - 77원](https://www.devicemart.co.kr/goods/view?no=2851)
-- [저항 220ohm - 15원](https://www.devicemart.co.kr/goods/view?no=890)
-- [스위치 - 88원](https://www.devicemart.co.kr/goods/view?no=1361702)
-- [피에조 부저 - 330원](https://www.devicemart.co.kr/goods/view?no=1361187)
+### A안
+- [[에듀이노] 아두이노 블록코딩 브론즈 키트 [악기만들기] 스크레치 엔트리 [J-2], 아두이노 포함 - 19,910원](https://www.devicemart.co.kr/goods/view?no=13907880)
+- [[SMG-A] 인체감지센서모듈 HC-SR501 [SZH-EK052] - 1,430원](https://www.devicemart.co.kr/goods/view?no=1287086)
+- [[SMG] 아두이노 RGB LED 모듈 [SZH-EK058], 700원](https://www.devicemart.co.kr/goods/view?no=1287089)
 
-합계 - 50,362원 (VAT 포함)
+합계 - 22,040원 (VAT 포함)
+
+### B안
+- [[디바이스마트] 아두이노 피아노 키트 [SZH-ME010], 케이블 포함 - 25,300원](https://www.devicemart.co.kr/goods/view?no=13068786)
+- [[SMG-A] 인체감지센서모듈 HC-SR501 [SZH-EK052] - 1,430원](https://www.devicemart.co.kr/goods/view?no=1287086)
+
+합계 - 26,730원 (VAT 포함)

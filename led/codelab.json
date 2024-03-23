@@ -3,10 +3,10 @@
   "format": "html",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2024-03-23T12:28:03+09:00",
+  "updated": "2024-03-23T15:09:01+09:00",
   "id": "led",
   "duration": 15,
-  "title": "LED 깜빡이기",
+  "title": "LED 켜보기",
   "summary": "LED 켜보기",
   "source": ".\\_article\\04_LED\\04_LED.md",
   "theme": "",
@@ -19,6 +19,6 @@
   "tags": [
     "web"
   ],
-  "feedback": "https://github.com/msaltnet/coding-camp",
+  "feedback": "https://github.com/msaltnet/jinju-coding",
   "url": "led"
 }

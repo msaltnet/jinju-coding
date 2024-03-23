@@ -3,9 +3,9 @@
   "format": "html",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2024-03-23T12:28:23+09:00",
+  "updated": "2024-03-23T15:08:41+09:00",
   "id": "play-button",
-  "duration": 15,
+  "duration": 1,
   "title": "버튼으로 노래 연주하기",
   "summary": "버튼으로 노래 연주하기",
   "source": ".\\_article\\05_play_button\\05_play_button.md",
@@ -19,6 +19,6 @@
   "tags": [
     "web"
   ],
-  "feedback": "https://github.com/msaltnet/coding-camp",
+  "feedback": "https://github.com/msaltnet/jinju-coding",
   "url": "play-button"
 }
