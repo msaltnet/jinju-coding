@@ -3,12 +3,12 @@
   "format": "html",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2024-03-23T15:09:01+09:00",
+  "updated": "2024-03-31T13:38:33+09:00",
   "id": "led",
   "duration": 15,
   "title": "LED 켜보기",
   "summary": "LED 켜보기",
-  "source": ".\\_article\\04_LED\\04_LED.md",
+  "source": ".\\_article\\03_LED\\03_LED.md",
   "theme": "",
   "status": [
     "published"

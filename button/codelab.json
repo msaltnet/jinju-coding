@@ -3,12 +3,12 @@
   "format": "html",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2024-03-23T14:59:59+09:00",
+  "updated": "2024-03-31T13:46:11+09:00",
   "id": "button",
-  "duration": 1,
+  "duration": 20,
   "title": "버튼으로 소리내기",
   "summary": "버튼으로 소리내기",
-  "source": ".\\_article\\03_button\\03_button.md",
+  "source": ".\\_article\\04_button\\04_button.md",
   "theme": "",
   "status": [
     "published"

@@ -27,23 +27,82 @@
                   environment="web"
                   feedback-link="https://github.com/msaltnet/jinju-coding">
     
-      <google-codelab-step label="시작하기" duration="1">
-        <p>버튼을 눌러서 피에조 부저를 통해 소리를 내보기</p>
+      <google-codelab-step label="시작하기" duration="2">
+        <p>스위치와 부저에 대해서 알아보고, 스위치 버튼을 눌러서 피에조 부저를 통해 소리를 내는 회로와 프로그램을 만들어 봅니다.</p>
+<p class="image-container"><img alt="완성 보드" src="img\\f9129dd2ac5f51c3.jpg"></p>
 <h2 is-upgraded>사전 준비</h2>
 <ol type="1">
 <li>아두이노 보드</li>
 <li>아두이노와 연결 가능한 PC와 IDE</li>
 <li>브레드보드</li>
-<li>버튼(택트 스위치) 소자</li>
+<li>버튼(택트 스위치) 부품</li>
 <li>저항 10K옴</li>
 <li>피에조 버저</li>
 </ol>
+<p class="image-container"><img alt="버튼 준비물" src="img\\f3927c56f0e10daa.jpg"></p>
 <h2 is-upgraded>배우게 될 것</h2>
 <ol type="1">
 <li>버튼(스위치)이 무엇인지</li>
 <li>버저를 통해 소리가 나는 원리</li>
 <li>버튼가 버저를 사용해서 소리는 내는 회로만들어 보기</li>
+<li>프로그램 만들고 실행해보기</li>
 </ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="스위치" duration="3">
+        <p>스위치는 회로 중간에서 손쉽게 회로를 연결하거나 끊어주는 역할을 하는 부품입니다.</p>
+<p class="image-container"><img alt="스위치" src="img\\e19c1f3390c88f5c.jpg"></p>
+<p>우리가 사용할 부품은 tactile switch로 tact 스위치라고 하는 부품입니다.</p>
+<p class="image-container"><img alt="tact switch" src="img\\b37bd23e7511e994.jpg"></p>
+<p>전류를 흘러서 만든 회로는 아래 그림처럼 간단하게 그리기도 합니다.</p>
+<p class="image-container"><img alt="basic-circuit" src="img\\29912bc9f06c17fe.jpg"></p>
+<p>중요한 것은 스위치를 회로에 연결해 줄 때 저항을 같이 연결해줘야 합니다. <strong>저항없이 스위치를 연결하면 회로와 부품이 망가질 수 있어요!!!</strong></p>
+<p>그래서 아래처럼 회로 중간에 저항을 함께 연결해 주어야 해요.</p>
+<p class="image-container"><img alt="풀다운" src="img\\fe682617329a780e.jpg"></p>
+<p>저항을 연결해주는 위치에 따라서 스위치가 눌렸을 때 신호가 다르게 동작하는데, 스위치를 누르지 않았을 때 높은 전압을 유지하도록 하는 것을 Pull-Up, 반대의 경우는 Pull-Down이라고 해요.</p>
+<p class="image-container"><img alt="풀다운" src="img\\4489e501e984f585.jpg"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="피에조 버저" duration="3">
+        <p><strong>전기가 통하면 소리가 나는 반도체 소자!</strong></p>
+<p>Buzzer란 우리가 일상 생활에서 이미 많이 사용하고 있는 소자입니다. 버스 벨이나 초인종과 같은 기능으로 사용하기도 합니다.</p>
+<p class="image-container"><img alt="buzzer" src="img\\6d9bfafd2579124b.png"></p>
+<aside class="special"><p> 농구에서 경기 시간이 종료 Buzzer가 울릴때 던진 슛을 Buzzer Beater 버저비터라고 합니다. </p>
+</aside>
+<p>Buzzer가 우리가 원하는 소리를 내게 하기 위해서는 주파수의 개념을 이해해야 합니다. 주파수는 1초 동안 전파나 음파가 진동하는 횟수를 뜻합니다.</p>
+<ul>
+<li><a href="https://news.samsungsemiconductor.com/kr/%EC%8A%AC%EA%B8%B0%EB%A1%9C%EC%9A%B4-%EC%A0%84%EA%B8%B0%EC%83%9D%ED%99%9C%EC%9D%84-%EC%9C%84%ED%95%9C-%EC%A0%84%EA%B8%B0%EC%83%81%EC%8B%9D%EC%9A%A9%EC%96%B4-%EC%A3%BC%ED%8C%8C%EC%88%98/" target="_blank">슬기로운 전기생활을 위한 전기상식용어 ‘주파수&#39;</a></li>
+</ul>
+<p class="image-container"><img alt="주파수" src="img\\25eb17c2b9524167.jpeg"></p>
+<p class="image-container"><img alt="주파수" src="img\\223b166faf15a773.jpeg"></p>
+<p>소리는 주파수에 따라서 음의 높낮이가 다르며, Buzzer에 흐르는 전류를 주파수를 변경하면 소리를 변경할 수 있습니다. Buzzer에 입력되는 전류의 주파수가 높을 수록 고음이 발생합니다.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="회로 만들기" duration="5">
+        <p>// 회로 만들기 실습</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="프로그램 만들기" duration="5">
+        <p>// 프로그램 만들기 실습</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="정리" duration="2">
+        <p>배우것 정리 및 보충 자료</p>
+<ul>
+<li><a href="https://stemwith.github.io/2018/09/01/Arduino-%EC%8A%A4%EC%9C%84%EC%B9%98-%ED%92%80%EB%8B%A4%EC%9A%B4-%ED%92%80%EC%97%85%EC%A0%80%ED%95%AD/" target="_blank">Arduino 스위치, 풀다운저항, 풀업저항</a></li>
+<li><a href="https://m.blog.naver.com/eduino/220908567028" target="_blank">아두이노 택트 스위치 원리 알아보기</a></li>
+<li><a href="https://news.samsungsemiconductor.com/kr/%EC%8A%AC%EA%B8%B0%EB%A1%9C%EC%9A%B4-%EC%A0%84%EA%B8%B0%EC%83%9D%ED%99%9C%EC%9D%84-%EC%9C%84%ED%95%9C-%EC%A0%84%EA%B8%B0%EC%83%81%EC%8B%9D%EC%9A%A9%EC%96%B4-%EC%A3%BC%ED%8C%8C%EC%88%98/" target="_blank">슬기로운 전기생활을 위한 전기상식용어 ‘주파수&#39;</a></li>
+</ul>
 
 
       </google-codelab-step>
