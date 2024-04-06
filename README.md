@@ -10,10 +10,10 @@
 1. [강의 소개 (10분)](./introduce)
 1. [전기와 반도체 그리고 프로그래밍 (15분)](./semiconductor)
  - 신호와 반도체, 코딩과 프로그래밍의 개념을 이해해보자
-1. [버튼으로 소리내기 (20분)](./button)
- - 버튼을 눌러서 소리를 내보자
 1. [LED 켜보기 (10분)](./led)
  - LED에 대해서 알아보고 회로를 통해 빛을 내보자
+1. [버튼으로 소리내기 (20분)](./button)
+ - 버튼을 눌러서 소리를 내보자
 1. [버튼으로 노래 연주하기 (20분)](./play-button)
  - 버튼을 누르면 노래가 연주되는 프로그램을 만들어보자
 1. 마무리 (5분)
@@ -61,16 +61,4 @@ IDE 프로그램에서 -> 화살표 버튼을 눌러서 아래와 같이 아두�
 아두이노 보드에 13번 핀 옆에 LED 불빛이 1초 간격으로 깜빡이는 것을 확인 합니다.
 
 ### 사용된 부품 및 가격
-### A안
-- [[에듀이노] 아두이노 블록코딩 브론즈 키트 [악기만들기] 스크레치 엔트리 [J-2], 아두이노 포함 - 19,910원](https://www.devicemart.co.kr/goods/view?no=13907880)
-- [[SMG-A] 인체감지센서모듈 HC-SR501 [SZH-EK052] - 1,430원](https://www.devicemart.co.kr/goods/view?no=1287086)
-- [[SMG] 아두이노 RGB LED 모듈 [SZH-EK058], 700원](https://www.devicemart.co.kr/goods/view?no=1287089)
-
-합계 - 22,040원 (VAT 포함)
-
-### B안
 - [[디바이스마트] 아두이노 피아노 키트 [SZH-ME010], 케이블 포함 - 25,300원](https://www.devicemart.co.kr/goods/view?no=13068786)
-- [[SMG-A] 인체감지센서모듈 HC-SR501 [SZH-EK052] - 1,430원](https://www.devicemart.co.kr/goods/view?no=1287086)
-- [[KEYES] 테스트[CH254] 소켓 점퍼 케이블 40P (칼라) (M/F) 20cm - 935원](https://www.devicemart.co.kr/goods/view?no=1321195)
-
-합계 - 27,665원 (VAT 포함)

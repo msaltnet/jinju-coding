@@ -74,41 +74,58 @@ V(전압) = I(전류) x R(저항)
 
 *아두이노에 전원을 연결해 줘야합니다. 컴퓨터와 USB연결
 
-## 깜빡이게 프로그래밍하기
+## RGB LED
+Duration: 0:02:00
+
+RGB LED 부품은 아래 그림과 같은 붉은색, 녹색, 파란색의 LED와 저항을 하나의 부품으로 만든것입니다. 자세히 보면 LED에서 나온 다리가 4개이고, 저항도 R1, R2, R3 세개가 붙어 있어요.
+
+![rgb-led](./img/rgb-led.jpg)
+
+아래와 같이 각 핀을 아두이노 보드의 번호에 맞게 연결해 줍니다.
+
+![기본 회로도](./img/rgb-led-circuit.jpg)
+
+하나의 부품으로 되어 있지만 사실 아래와 같이 LED와 3개의 저항을 각각 연결한 것과 같습니다. 11번 핀에는 빨간색 Red, 12번 핀은 녹색 Green, 13번 핀은 파란색 Blue, 그리고 접지라고 하는 GND 핀도 연결해 줍니다. 이렇게 회로가 만들어졌습니다.
+
+![회로도](./img/rgb-led-circuit-detail.jpg)
+
+## 프로그래밍하기
 Duration: 0:06:00 
 
-이번에는 단순히 전원이 들어와서 불이 켜져있는 것이 아니라 프로그램으로 불을 켜고 끄는 것을 해보겠습니다.
+이제 아두이노 보드의 11, 12, 13, GND 핀에 맞게 RGB LED 소자를 꽂은 회로를 동작하는 프로그램을 만들어 보겠습니다. 
 
-아래와 같이 회로를 구성해서 아두이노의 출력핀이 LED와 연결되게 합니다.
-
-![디지털 핀 연결 회로도](./img/led-blink.png)
+아두이노에 전원을 연결해 줘야합니다. 컴퓨터와 USB연결해주세요.
 
 컴퓨터에 아두이노 IDE를 실행합니다. IDE는 프로그램을 작성하고, 작성된 프로그램을 기계 언어로 만들어서 아두이노에 저장(업로드) 할 수 있는 컴퓨터 프로그램입니다.
 
 ![arduino](./img/arduino-init.PNG)
 
-아래와 같이 프로그램을 입력하거나 복사해서 붙여 넣어주세요.
+우선 1개 색을 깜빡이는 프로그램을 만들어 볼께요. 미리 작성된 프로그램을 입력하거나 복사해서 붙여 넣으면 되는데, 아래와 같이 파일을 불러와도 됩니다. `led-one.ino` 파일을 불러 옵니다.
 
-[소스코드 파일 - led.ino](https://github.com/msaltnet/coding-camp/blob/main/code/led.ino)
+![open](./img/open.jpg)
+
+아래와 같은 프로그램을 확인 할 수 있어요.
 
 ```c
-#define LED_PIN_NUM 8 // LED의 긴다리 핀과 연결된 아두이노 핀 번호 (+핀)
+#define LED_RED_PIN 13   // LED의 R 핀과 연결된 아두이노 핀 번호 
+#define LED_GREEN_PIN 12 // LED의 G 핀과 연결된 아두이노 핀 번호
+#define LED_BLUE_PIN 11  // LED의 B 핀과 연결된 아두이노 핀 번호
 
 void setup() { //setup은 처음 한 번 실행되는 함수 입니다.
-  pinMode(LED_PIN_NUM, OUTPUT); // LED의 긴다리 핀을 출력으로 설정
+  pinMode(LED_RED_PIN, OUTPUT);   // LED의 R 핀을 출력으로 설정
+  pinMode(LED_GREEN_PIN, OUTPUT); // LED의 G 핀을 출력으로 설정
+  pinMode(LED_BLUE_PIN, OUTPUT);  // LED의 B 핀을 출력으로 설정
 }
 
 void loop() { //loop는 계속 반복 실행되는 함수 입니다.
-  digitalWrite(LED_PIN_NUM, HIGH); // LED와 연결된 핀에 전압을 5V로 설정
-  delay(1000); // 1초(1000밀리초) 동안 대기
-  digitalWrite(LED_PIN_NUM, LOW); // LED와 연결된 핀에 전압을 0V로 설정
-  delay(1000);
+  digitalWrite(LED_RED_PIN, HIGH); // LED와 연결된 핀에 전압을 5V로 설정
+  delay(100); // 0.1초(100밀리초) 동안 대기
+  digitalWrite(LED_RED_PIN, LOW); // LED와 연결된 핀에 전압을 5V로 설정
+  delay(100); // 0.1초(100밀리초) 동안 대기
 }
 ```
 
-다음으로 왼쪽 위에 업로드 버튼을 눌러서 LED를 깜빡이게 해보세요.
-
-![arduino led](./img/arduino-upload-btn.PNG)
+프로그램에 대해서 간단하게 설명할께요.
 
 `void setup()`은 아두이노를 켰을때 한 번 실행되며, `void loop()`는 계속 반복 실행됩니다.
 
@@ -120,6 +137,63 @@ void loop() { //loop는 계속 반복 실행되는 함수 입니다.
 
 *ms* milliseconds는 1/1000 초 입니다. 따라서 1000ms는 1초입니다.
 
+그럼 이제 프로그램을 아두이노에 넣어 볼께요. 우선 아두이노가 컴퓨터와 잘 연결되었는지 확인해 봅니다. 연결이 안되어 있으면 아래와 같이 연결된 아두이노를 선택해서 연결해요.
+
+![연결](./img/connect.jpg)
+
+아두이노에 프로그램을 넣는 것을 업로드라고 합니다. 연결된 아두이노를 선택한 다음 왼쪽위에 업로드 버튼을 눌러서 업로드 해보세요.
+
+![arduino led](./img/upload.jpg)
+
+이제 아두이노에 연결된 빨간색 LED가 0.1초 간격으로 깜빡이는 것을 확인 할 수 있습니다!
+
+프로그램을 수정해서 다른 동작도 해볼까요? 다른 빨간색과 파란색을 동시에 켜면 어떻게 될까요? `led-mix.ino` 파일을 불러와서 업로드 해보세요.
+
+```c
+#define LED_RED_PIN 13   // LED의 R 핀과 연결된 아두이노 핀 번호 
+#define LED_GREEN_PIN 12 // LED의 G 핀과 연결된 아두이노 핀 번호
+#define LED_BLUE_PIN 11  // LED의 B 핀과 연결된 아두이노 핀 번호
+
+void setup() { //setup은 처음 한 번 실행되는 함수 입니다.
+  pinMode(LED_RED_PIN, OUTPUT);   // LED의 R 핀을 출력으로 설정
+  pinMode(LED_GREEN_PIN, OUTPUT); // LED의 G 핀을 출력으로 설정
+  pinMode(LED_BLUE_PIN, OUTPUT);  // LED의 B 핀을 출력으로 설정
+}
+
+void loop() { //loop는 계속 반복 실행되는 함수 입니다.
+  digitalWrite(LED_RED_PIN, HIGH); // LED와 연결된 핀에 전압을 5V로 설정
+  digitalWrite(LED_BLUE_PIN, HIGH); // LED와 연결된 핀에 전압을 5V로 설정
+}
+```
+
+RGB LED가 차례대로 켜지고 꺼지게 만들어 볼까요? `led.ino` 파일을 불러와서 업로드 해보세요.
+
+```c
+#define LED_RED_PIN 13   // LED의 R 핀과 연결된 아두이노 핀 번호 
+#define LED_GREEN_PIN 12 // LED의 G 핀과 연결된 아두이노 핀 번호
+#define LED_BLUE_PIN 11  // LED의 B 핀과 연결된 아두이노 핀 번호
+
+void setup() { //setup은 처음 한 번 실행되는 함수 입니다.
+  pinMode(LED_RED_PIN, OUTPUT);   // LED의 R 핀을 출력으로 설정
+  pinMode(LED_GREEN_PIN, OUTPUT); // LED의 G 핀을 출력으로 설정
+  pinMode(LED_BLUE_PIN, OUTPUT);  // LED의 B 핀을 출력으로 설정
+}
+
+void loop() { //loop는 계속 반복 실행되는 함수 입니다.
+  digitalWrite(LED_RED_PIN, HIGH); // LED와 연결된 핀에 전압을 5V로 설정
+  delay(1000); // 1초(1000밀리초) 동안 대기
+  digitalWrite(LED_RED_PIN, LOW); // LED와 연결된 핀에 전압을 5V로 설정
+  digitalWrite(LED_GREEN_PIN, HIGH); // LED와 연결된 핀에 전압을 0V로 설정
+  delay(1000);
+  digitalWrite(LED_GREEN_PIN, LOW); // LED와 연결된 핀에 전압을 0V로 설정
+  digitalWrite(LED_BLUE_PIN, HIGH); // LED와 연결된 핀에 전압을 0V로 설정
+  delay(1000);
+  digitalWrite(LED_BLUE_PIN, LOW); // LED와 연결된 핀에 전압을 0V로 설정
+}
+```
+
+코드에 설명을 보고 이해한 다음, 프로그램을 내 마음대로 바꿔서 동작시켜보세요.
+
 <aside class="positive">
 코드를 수정해서 깜빡이는 속도를 조절해 보세요. 눈으로 깜빡임을 확인할 수 있는 정도는 얼마나 될까요?
 </aside>
@@ -127,12 +201,14 @@ void loop() { //loop는 계속 반복 실행되는 함수 입니다.
 ## 정리
 Duration: 0:01:00
 
-아두이노와 브레드보드, LED, 저항을 이용해서 간단한 프로그래밍을 해보았습니다.
+아두이노와 브레드보드, RGB LED를 이용해서 간단한 프로그래밍을 해보았습니다.
 
 처음 배운것이 많아서 복잡해 보이지만 사실 매우 간단합니다.
 
 - LED는 전기가 흐르면 빛이 나도록 만든 반도체 소자다.
 - 반도체를 통해서 신호를 마음대로 프로그래밍 할 수 있는 전자제품을 만들 수 있다.
 - 그리고 그것들을 이용해서 LED를 깜빡거리게 할 수 있다.
+
+[소스코드 파일](https://github.com/msaltnet/g-camp/blob/main/code/led.ino)
 
 ![semiconductor](./img/samsung-semi.png)
