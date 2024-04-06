@@ -85,6 +85,8 @@ RGB LED 부품은 아래 그림과 같은 붉은색, 녹색, 파란색의 LED와
 
 ![기본 회로도](./img/rgb-led-circuit.jpg)
 
+![보드](./img/board.png)
+
 하나의 부품으로 되어 있지만 사실 아래와 같이 LED와 3개의 저항을 각각 연결한 것과 같습니다. 11번 핀에는 빨간색 Red, 12번 핀은 녹색 Green, 13번 핀은 파란색 Blue, 그리고 접지라고 하는 GND 핀도 연결해 줍니다. 이렇게 회로가 만들어졌습니다.
 
 ![회로도](./img/rgb-led-circuit-detail.jpg)
@@ -209,6 +211,6 @@ Duration: 0:01:00
 - 반도체를 통해서 신호를 마음대로 프로그래밍 할 수 있는 전자제품을 만들 수 있다.
 - 그리고 그것들을 이용해서 LED를 깜빡거리게 할 수 있다.
 
-[소스코드 파일](https://github.com/msaltnet/g-camp/blob/main/code/led.ino)
+[소스코드 파일](https://github.com/msaltnet/jinju-coding/tree/main/code)
 
 ![semiconductor](./img/samsung-semi.png)

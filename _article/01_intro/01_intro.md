@@ -9,7 +9,7 @@ feedback link: https://github.com/msaltnet/jinju-coding
 # 강의 소개
 
 ## 강사 소개
-Duration: 0:05:00
+Duration: 0:02:00
 
 [맛소금](https://me.msalt.net) - 지구별 대한민국의 용산에서 나고 자란 평범한 개발자 입니다. 
 
@@ -20,7 +20,7 @@ Duration: 0:05:00
 ![dsr](./img/dsr.jpg)
 
 ## 오늘 배울것
-Duration: 0:02:00
+Duration: 0:01:00
 
 반도체와 프로그래밍에 대해서 배우고, 반도체와 전기 에너지를 사용해서 동작하는 회로와 프로그램을 직접 만들어 봅니다.
 
@@ -29,7 +29,7 @@ Duration: 0:02:00
 [동작 동영상](https://www.youtube.com/watch?v=RbDGxCBN8vQ)
 
 ## 정리
-Duration: 0:03:00
+Duration: 0:01:00
 
 짧은 시간이라서 많은 것을 하지는 못하지만, 반도체와 프로그래밍을 조금 맛보는 시간이 될 수 있었으면 좋겠어요.
 
