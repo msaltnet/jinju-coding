@@ -9,13 +9,13 @@ void setup() { //setup은 처음 한 번 실행되는 함수 입니다.
 }
 
 void loop() { //loop는 계속 반복 실행되는 함수 입니다.
-  digitalWrite(LED_RED_PIN, HIGH); // LED와 연결된 핀에 전압을 5V로 설정
-  delay(1000); // 1초(1000밀리초) 동안 대기
-  digitalWrite(LED_RED_PIN, LOW); // LED와 연결된 핀에 전압을 5V로 설정
+  digitalWrite(LED_RED_PIN, HIGH);   // LED와 연결된 핀에 전압을 5V로 설정
+  delay(1000);                       // 1초(1000밀리초) 동안 대기
+  digitalWrite(LED_RED_PIN, LOW);    // LED와 연결된 핀에 전압을 5V로 설정
   digitalWrite(LED_GREEN_PIN, HIGH); // LED와 연결된 핀에 전압을 0V로 설정
   delay(1000);
-  digitalWrite(LED_GREEN_PIN, LOW); // LED와 연결된 핀에 전압을 0V로 설정
-  digitalWrite(LED_BLUE_PIN, HIGH); // LED와 연결된 핀에 전압을 0V로 설정
+  digitalWrite(LED_GREEN_PIN, LOW);  // LED와 연결된 핀에 전압을 0V로 설정
+  digitalWrite(LED_BLUE_PIN, HIGH);  // LED와 연결된 핀에 전압을 0V로 설정
   delay(1000);
-  digitalWrite(LED_BLUE_PIN, LOW); // LED와 연결된 핀에 전압을 0V로 설정
+  digitalWrite(LED_BLUE_PIN, LOW);   // LED와 연결된 핀에 전압을 0V로 설정
 }

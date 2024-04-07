@@ -1,6 +1,6 @@
 author: Jeong Seongmoon
 summary: 적외선 센서로 LED 켜보기
-id: infrared
+id: game
 categories: codelab
 environments: Web
 status: Published
