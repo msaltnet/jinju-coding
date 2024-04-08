@@ -1,0 +1,94 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>수업 준비</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="preparation"
+                  title="수업 준비"
+                  environment="web"
+                  feedback-link="https://github.com/msaltnet/coding-camp">
+    
+      <google-codelab-step label="사전에 미리 준비해야 할 것" duration="3">
+        <p>사전에 준비가 필요한 것들에 대해서 정리해 보았습니다.</p>
+<h2 is-upgraded>아두이노 키트 확인 및 조립</h2>
+<p>아두이노 보드를 아크릴 판 위에 고정시키고, 브레드보드를 부착하는 과정에서 학생들이 어려움을 겪을 수 있을 것 같습니다. 사전에 준비 필요합니다.</p>
+<p>볼트와 너트를 조이는 과정에서 도구가 필요할 수 있고, 브레드보드 뒷면의 양면 테이프를 자르는 부분에서 칼이 필요합니다.</p>
+<p>브레드보드 부착은 수업 중에 해도 될 것 같아요.</p>
+<h2 is-upgraded>실습 PC와 아두이노 IDE 프로그램 설치</h2>
+<p>아두이노에 학생들이 작성한 프로그램을 업로드하기 위해서 아두이노 IDE 프로그램이 PC에 설치되어 있어야 합니다.</p>
+<p>설치 후 USB로 연결해서 정상적으로 연결되는지까지 확인이 필요합니다.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="아두이노 키트 확인 및 조립" duration="3">
+        <p>아두이노 키트와 USB 연결 케이블을 확인해 주세요.</p>
+<p>오늘 사용할 피아노 만들기 키트입니다.</p>
+<p class="image-container"><img alt="준비물" src="img\\597154b4d6f72337.jpg"></p>
+<p>내용물을 확인해 주세요.</p>
+<p class="image-container"><img alt="내용물" src="img\\f3927c56f0e10daa.jpg"></p>
+<p>아크릴판을 꺼내서 보호 필름을 벗겨주세요.</p>
+<p class="image-container"><img alt="p1" src="img\\a297080187cc255.jpg"></p>
+<p>함께 들어있는 볼트와 너트를 사용해서, 아두이노 보드를 아크릴판에 고정해 주세요.</p>
+<p class="image-container"><img alt="p2" src="img\\7f10e2ecb605d145.jpg"></p>
+<p>아두이노 보드와 아래 그림과 같이 연결해주세요. 드라이버가 필요합니다.</p>
+<p class="image-container"><img alt="p3" src="img\\4006a32870911595.jpg"></p>
+<p>아크릴보드에 브레드 보드를 붙여주세요.</p>
+<p class="image-container"><img alt="p4" src="img\\214765da0a976f66.jpg"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="컴퓨터에 아두이노 프로그램 설치" duration="5">
+        <p><a href="https://www.arduino.cc/en/software" target="_blank">공식 설치 사이트</a>에서 MSI Installer를 다운 받아서 설치합니다.</p>
+<p class="image-container"><img alt="IDE" src="img\\a5ea7070fcde19fb.jpg"></p>
+<p>IDE를 실행하고, 아두이노 보드를 PC에 연결합니다. 아래와 같이 보드가 정상적으로 연결되는지 확인합니다. 왼쪽 위 박스에서 연결된 보드를 선택하면 오른쪽 아래 연결 상태 표시됩니다.</p>
+<p class="image-container"><img alt="IDE - 보드 연결" src="img\\9a58dede2fd82f.jpg"></p>
+<p>동작 확인을 위해서, 아래 프로그램 코드를 복사해서 붙여 넣습니다.</p>
+<pre><code>void setup() {
+  pinMode(13, OUTPUT);  // 디지털 8번핀을 입력모드로 설정.
+}
+
+void loop() {
+  digitalWrite(13, HIGH); // 디지털 13번 핀의 출력을 HIGH로 설정하여 아두이노 보드 LED 모듈 켜기
+  delay(1000); // 1000 밀리초 (1초) 동안 기다리기
+  digitalWrite(13, LOW);  // 디지털 13번 핀의 출력을 LOW로 설정하여 아두이노 보드 LED 모듈 끄기
+  delay(1000); // 1000 밀리초 (1초) 동안 기다리기
+}
+</code></pre>
+<p>IDE 프로그램에서 -&gt; 화살표 버튼을 눌러서 아래와 같이 아두이노 보드에 작성한 프로그램 코드를 업로드 합니다.</p>
+<p class="image-container"><img alt="업로드" src="img\\822c77b32c2c1805.jpg"></p>
+<p>아두이노 보드에 13번 핀 옆에 LED 불빛이 1초 간격으로 깜빡이는 것을 확인 합니다.</p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>

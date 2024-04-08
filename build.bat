@@ -4,3 +4,4 @@
 .\claat-windows-amd64.exe export .\_article\04_button\04_button.md
 .\claat-windows-amd64.exe export .\_article\05_play_button\05_play_button.md
 .\claat-windows-amd64.exe export .\_article\99_game\99_game.md
+.\claat-windows-amd64.exe export .\_article\00_preparation\preparation.md
