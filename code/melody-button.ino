@@ -21,25 +21,31 @@
 
 #define MUTE 0 //무음 처리를 위해서 추가
 
-#define TEMPO 300
+#define TEMPO 300 //템포를 바꾸면 멜로디가 빨리 재생됩니다.
 
+//tone과 beat라는 변수를 갖는 sound 구조체를 정의합니다.
 struct sound {
-  int tone;
-  int beat;
+    int tone;
+    int beat;
 };
 
+//주파수와 음의 길이 정보를 갖는 구조체의 배열
+//위에서 정한 sound 구조체를 여러개 가지고 있는 리스트를 정의합니다.
+//15개의 정보를 리스트에 넣어주었습니다.
 struct sound littleStar[] = { //주파수와 음의 길이 정보를 갖는 구조체의 배열
   {NOTE_C5, 1}, {NOTE_C5, 1}, {NOTE_G5, 1}, {NOTE_G5, 1}, {NOTE_A5, 1},
   {NOTE_A5, 1}, {NOTE_G5, 2}, {MUTE, 1}, {NOTE_F5, 1}, {NOTE_F5, 1},
   {NOTE_E5, 1}, {NOTE_E5, 1}, {NOTE_D5, 1}, {NOTE_D5, 2}, {NOTE_C5, 4},
 };
-int littleStarCount = 15;
+int littleStarCount = 15; //리스트 길이를 정해줍니다.
 
+//playMelody 함수는 멜로디를 연주하는 함수입니다.
 void playMelody(sound soundList[], int soundListCount) {
-    for(int i = 0; i < soundListCount; i++) //soundListCount 만큼 반복
+    //soundListCount 만큼 반복하면서 차례대로 소리를 연주합니다
+    for(int i = 0; i < soundListCount; i++)
     {
-        if (soundList[i].tone == MUTE) { //무음인 경우
-            noTone(BUZZER_PIN);
+        if (soundList[i].tone == MUTE) { //주파수가 MUTE인 경우
+            noTone(BUZZER_PIN); //소리를 내지 않습니다
         } else {
             tone(BUZZER_PIN, soundList[i].tone); //soundList의 i번째 주파수를 재생
         }
@@ -117,12 +123,13 @@ void loop() {
     else if (digitalRead(10) == HIGH) {
         digitalWrite(LED_RED_PIN, HIGH);
         digitalWrite(LED_BLUE_PIN, HIGH);
+        //멜로디를 연주하는 함수 playMelody를 호출합니다.
         playMelody(littleStar, littleStarCount);
         Serial.println("10 on");
     }
 
     else{
-        noTone(BUZZER_PIN);              // 아무 입력이 없을때 2번 핀의 Tone 함수 사용 안함
+        noTone(BUZZER_PIN); // 아무 입력이 없을때 2번 핀의 Tone 함수 사용 안함
         Serial.println("off");
     }
 }

@@ -28,8 +28,9 @@
 
 #define MUTE 0 //무음 처리를 위해서 추가
 
-int tempo = 300;
+int tempo = 300; //노래마다 tempo를 다르게 설정하기 위해 전역변수로 설정
 
+//tone과 beat라는 변수를 갖는 sound 구조체를 정의합니다.
 struct sound {
   int tone;
   int beat;
@@ -80,6 +81,7 @@ struct sound happyBirthday[] = {
 };
 int happyBirthdayCount = 28;
 
+//playMelody 함수는 멜로디를 연주하는 함수입니다.
 void playMelody(sound soundList[], int soundListCount) {
     for(int i = 0; i < soundListCount; i++) //soundListCount 만큼 반복
     {
@@ -142,9 +144,11 @@ void loop() {
     }
 
     else if (digitalRead(7) == HIGH) {
+        // 생일축하 멜로디는 tempo를 50으로 설정
         tempo = 50;
         digitalWrite(LED_GREEN_PIN, HIGH);
         playMelody(happyBirthday, happyBirthdayCount);
+        // 멜로디가 끝나면 tempo를 다시 300으로 설정
         tempo = 300;
         Serial.println("7 on");
     }
@@ -169,7 +173,7 @@ void loop() {
     }
 
     else{
-        noTone(BUZZER_PIN);              // 아무 입력이 없을때 2번 핀의 Tone 함수 사용 안함
+        noTone(BUZZER_PIN);   // 아무 입력이 없을때 2번 핀의 Tone 함수 사용 안함
         Serial.println("off");
     }
 }

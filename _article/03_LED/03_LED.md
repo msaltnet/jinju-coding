@@ -102,7 +102,7 @@ Duration: 0:06:00
 
 ![arduino](./img/arduino-init.PNG)
 
-우선 1개 색을 깜빡이는 프로그램을 만들어 볼께요. 미리 작성된 프로그램을 입력하거나 복사해서 붙여 넣으면 되는데, 아래와 같이 파일을 불러와도 됩니다. `led-one.ino` 파일을 불러 옵니다.
+우선 1개 색을 깜빡이는 프로그램을 만들어 볼께요. 미리 작성된 프로그램을 입력하거나 복사해서 붙여 넣으면 되는데, 아래와 같이 파일을 불러와도 됩니다. [`led-one.ino`](https://github.com/msaltnet/jinju-coding/blob/main/code/led-one.ino) 파일을 불러 옵니다.
 
 ![open](./img/open.jpg)
 
@@ -149,7 +149,7 @@ void loop() { //loop는 계속 반복 실행되는 함수 입니다.
 
 이제 아두이노에 연결된 빨간색 LED가 0.1초 간격으로 깜빡이는 것을 확인 할 수 있습니다!
 
-프로그램을 수정해서 다른 동작도 해볼까요? 다른 빨간색과 파란색을 동시에 켜면 어떻게 될까요? `led-mix.ino` 파일을 불러와서 업로드 해보세요.
+프로그램을 수정해서 다른 동작도 해볼까요? 다른 빨간색과 파란색을 동시에 켜면 어떻게 될까요? [`led-mix.ino`](https://github.com/msaltnet/jinju-coding/blob/main/code/led-mix.ino) 파일을 불러와서 업로드 해보세요.
 
 ```c
 #define LED_RED_PIN 13   // LED의 R 핀과 연결된 아두이노 핀 번호 
@@ -168,7 +168,7 @@ void loop() { //loop는 계속 반복 실행되는 함수 입니다.
 }
 ```
 
-RGB LED가 차례대로 켜지고 꺼지게 만들어 볼까요? `led.ino` 파일을 불러와서 업로드 해보세요.
+RGB LED가 차례대로 켜지고 꺼지게 만들어 볼까요? [`led.ino`](https://github.com/msaltnet/jinju-coding/blob/main/code/led.ino) 파일을 불러와서 업로드 해보세요.
 
 ```c
 #define LED_RED_PIN 13   // LED의 R 핀과 연결된 아두이노 핀 번호 
