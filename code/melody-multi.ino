@@ -174,6 +174,5 @@ void loop() {
 
     else{
         noTone(BUZZER_PIN);   // 아무 입력이 없을때 2번 핀의 Tone 함수 사용 안함
-        Serial.println("off");
     }
 }

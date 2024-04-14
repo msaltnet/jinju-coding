@@ -11,91 +11,77 @@
 #define NOTE_A4  440 //4옥타브 라에 해당하는 주파수
 #define NOTE_B4  494 //4옥타브 시에 해당하는 주파수
 #define NOTE_C5  523 //5옥타브 도에 해당하는 주파수
-#define NOTE_D5  587
-#define NOTE_E5  659
-#define NOTE_F5  698
-#define NOTE_G5  784
-#define NOTE_A5  880
-#define NOTE_B5  988
-#define NOTE_C6  1047
-#define NOTE_D6  1175
-#define NOTE_E6  1319
-#define NOTE_F6  1397
-#define NOTE_G6  1568
-#define NOTE_A6  1760
-#define NOTE_B6  1976
-#define NOTE_C7  2093
 
-#define MUTE 0 //무음 처리를 위해서 추가
+#define MISS_NUM 3 // 술래를 몇 명으로 할지 정하는 상수
+int missPinNum[MISS_NUM]; // 버튼 핀 번호를 무작위로 뽑아서 저장하는 배열
 
-int tempo = 300;
-
-struct sound {
-  int tone;
-  int beat;
-};
-
-// 반짝 반짝 작은 별
-struct sound littleStar[] = { //주파수와 음의 길이 정보를 갖는 구조체의 배열
-  {NOTE_C5, 1}, {NOTE_C5, 1}, {NOTE_G5, 1}, {NOTE_G5, 1}, {NOTE_A5, 1},
-  {NOTE_A5, 1}, {NOTE_G5, 2}, {MUTE, 1}, {NOTE_F5, 1}, {NOTE_F5, 1},
-  {NOTE_E5, 1}, {NOTE_E5, 1}, {NOTE_D5, 1}, {NOTE_D5, 2}, {NOTE_C5, 4},
-};
-int littleStarCount = 15;
-
-// 학교종이 땡땡땡
-struct sound schoolBell[] = { //주파수와 음의 길이 정보를 갖는 구조체의 배열
-  {NOTE_G4, 1}, {NOTE_G4, 1}, {NOTE_A4, 1}, {NOTE_A4, 1}, // 솔솔라라
-  {NOTE_G4, 1}, {NOTE_G4, 1}, {NOTE_E4, 2}, // 솔솔미
-  {NOTE_G4, 1}, {NOTE_G4, 1}, {NOTE_E4, 1}, {NOTE_E4, 1}, // 솔솔미미
-  {NOTE_D4, 3}, {MUTE, 1}, // 레
-  {NOTE_G4, 1}, {NOTE_G4, 1}, {NOTE_A4, 1}, {NOTE_A4, 1}, // 솔솔라라
-  {NOTE_G4, 1}, {NOTE_G4, 1}, {NOTE_E4, 2}, // 솔솔미
-  {NOTE_G4, 1}, {NOTE_E4, 1}, {NOTE_D4, 1}, {NOTE_E4, 1}, // 솔미레미
-  {NOTE_C4, 3}, {MUTE, 1} // 도
-};
-int schoolBellCount = 25;
-
-// 징글벨
-struct sound jingleBell[] = {
-    {NOTE_E5, 1}, {NOTE_E5, 1}, {NOTE_E5, 2}, {NOTE_E5, 1}, {NOTE_E5, 1},
-    {NOTE_E5, 2}, {NOTE_E5, 1}, {NOTE_G5, 1}, {NOTE_C5, 1}, {NOTE_D5, 1},
-    {NOTE_E5, 4}, {MUTE, 1}, {NOTE_F5, 1}, {NOTE_F5, 1}, {NOTE_F5, 1},
-    {NOTE_F5, 1}, {NOTE_F5, 1}, {NOTE_E5, 1}, {NOTE_E5, 1}, {NOTE_E5, 1},
-    {NOTE_E5, 1}, {NOTE_D5, 1}, {NOTE_D5, 1}, {NOTE_E5, 1}, {NOTE_D5, 2},
-    {NOTE_G5, 2}
-};
-int jingleBellCount = 26;
-
-// 생일축하
-struct sound happyBirthday[] = {
-    {NOTE_G5, 4}, {NOTE_G5, 4}, {NOTE_A5, 8}, {NOTE_G5, 8}, {NOTE_C6, 8},
-    {NOTE_B5, 16}, {MUTE, 2},
-    {NOTE_G5, 4}, {NOTE_G5, 4}, {NOTE_A5, 8}, {NOTE_G5, 8}, {NOTE_D6, 8},
-    {NOTE_C6, 16}, {MUTE, 2},
-    {NOTE_G5, 4}, {NOTE_G5, 4}, {NOTE_G6, 8}, {NOTE_E6, 8}, {NOTE_C6, 8},
-    {NOTE_B5, 8}, {NOTE_A5, 16}, {MUTE, 2},
-    {NOTE_F6, 4}, {NOTE_F6, 4}, {NOTE_E6, 8}, {NOTE_C6, 8}, {NOTE_D6, 8},
-    {NOTE_C6, 16},
-};
-int happyBirthdayCount = 28;
-
-void playMelody(sound soundList[], int soundListCount) {
-    for(int i = 0; i < soundListCount; i++) //soundListCount 만큼 반복
-    {
-        if (soundList[i].tone == MUTE) { //무음인 경우
-            noTone(BUZZER_PIN);
-        } else {
-            tone(BUZZER_PIN, soundList[i].tone); //soundList의 i번째 주파수를 재생
-        }
-        delay(soundList[i].beat * tempo); //beat * tempo 만큼 연주
-
-        noTone(BUZZER_PIN); //재생중지
-        delay(tempo/2); //음과 음사이 반박자 대기
+// makeSound 함수는 핀 번호가 missPinNum 배열 중 하나이면 탈락 소리를 낸다.
+void makeSound(int pinNum) {
+    if (isPass(pinNum)) {
+        Serial.println("Pass");
+        tone(BUZZER_PIN, NOTE_E4);
+        delay(100);
+        tone(BUZZER_PIN, NOTE_G4);
+        delay(100);
+        tone(BUZZER_PIN, NOTE_C5);
+        delay(150);
+        tone(BUZZER_PIN, NOTE_G4);
+        delay(250);
+        noTone(BUZZER_PIN);
+    } else {
+        Serial.println("Miss");
+        tone(BUZZER_PIN, NOTE_D4);
+        delay(120);
+        noTone(BUZZER_PIN);
+        delay(30);
+        tone(BUZZER_PIN, NOTE_D4);
+        delay(450);
+        noTone(BUZZER_PIN);
     }
 }
 
+// makeMiss 함수는 술래를 정하는 함수이다.
+// 이 함수는 3~10사이 숫자로 랜덤으로 술래를 정해서 전역 변수에 저장한다.
+void makeMiss() {
+    //랜덤 씨드를 설정해줘야 매번 다른 값이 나온다.
+    //랜덤 씨드를 아날로그 0번핀의 값을 이용해서 설정한다.
+    Serial.print("Start makeMiss: ");
+    Serial.println(analogRead(0));
+    randomSeed(analogRead(0));
+    //missPinNum에 3~10사이의 같지 않은 무작위 숫자를 저장한다.
+    for (int i = 0; i < MISS_NUM; i++) {
+        int num = random(3, 11);
+        while(1) {
+            bool isSame = false;
+            for (int j = 0; j < i; j++) {
+                if (missPinNum[j] == num) {
+                    isSame = true;
+                    break;
+                }
+            }
+            if (isSame) {
+                num = random(3, 11);
+            } else {
+                break;
+            }
+        }
+        missPinNum[i] = num;
+        Serial.print("missPinNum: ");
+        Serial.println(num);
+    }
+}
+
+bool isPass(int pinNum) {
+    for (int i = 0; i < MISS_NUM; i++) {
+        if (missPinNum[i] == pinNum) {
+            return false;
+        }
+    }
+    return true;
+}
+
 void setup() {
+    Serial.begin(9600);  // 디버깅을 위한 시리얼 통신 설정
     pinMode(3, INPUT);   // 디지털 3번핀을 입력모드로 설정
     pinMode(4, INPUT);   // 디지털 4번핀을 입력모드로 설정
     pinMode(5, INPUT);   // 디지털 5번핀을 입력모드로 설정
@@ -109,8 +95,8 @@ void setup() {
     pinMode(LED_RED_PIN, OUTPUT);    // 디지털 11번핀을 출력모드로 설정
     pinMode(LED_GREEN_PIN, OUTPUT);  // 디지털 12번핀을 출력모드로 설정
     pinMode(LED_BLUE_PIN, OUTPUT);   // 디지털 13번핀을 출력모드로 설정
-    Serial.begin(9600);              // 디버깅을 위한 시리얼 통신 설정
-}
+    makeMiss(); // 술래를 정한다.
+} 
 
 void loop() {
     digitalWrite(LED_RED_PIN, LOW);   // LED의 R 핀을 출력을 LOW으로 변경
@@ -118,58 +104,54 @@ void loop() {
     digitalWrite(LED_BLUE_PIN, LOW);  // LED의 B 핀을 출력을 LOW으로 변경
 
     if (digitalRead(3) == HIGH) {         // 만약 10번핀에 HIGH신호가 입력되면
-        tone (BUZZER_PIN, NOTE_C4);           // 2번핀에 주파수 246의 신호를 출력
+        makeSound(3);
         digitalWrite(LED_RED_PIN, HIGH);  // LED_RED_PIN 핀의 출력을 HIGH로 설정하여 LED 모듈(빨간색) 발광
         Serial.println("3 on");          // 아두이노 IDE 시리얼 모니터에 "9 on" 출력
     }
 
     else if (digitalRead(4) == HIGH) {    // 위 조건이 해당 하지 않고 만약 8번에 HIGH 신호가 입력되면
-        tone (BUZZER_PIN, NOTE_D4);           // 2번핀에 주파수 261의 신호를 출력
+        makeSound(4);
         digitalWrite(LED_GREEN_PIN, HIGH);// LED_GREEN_PIN핀의 출력을 HIGH로 설정하여 LED 모듈(초록색) 발광
         Serial.println("4 on");
     }
 
     else if (digitalRead(5) == HIGH) {    // 위 조건이 해당 하지 않고 만약 9번핀에 HIGH신호가 입력되면
-        tone (BUZZER_PIN, NOTE_E4);           // 2번핀에 주파수 294의 신호를 출력
+        makeSound(5);
         digitalWrite(LED_BLUE_PIN,HIGH);  // LED_BLUE_PIN핀의 출력을 HIGH로 설정하여 LED 모듈(파란색) 발광
         Serial.println("5 on");
     }
 
     else if (digitalRead(6) == HIGH) {
-        tone (BUZZER_PIN, NOTE_F4);
+        makeSound(6);
         digitalWrite(LED_RED_PIN,HIGH);
         Serial.println("6 on");
     }
 
     else if (digitalRead(7) == HIGH) {
-        tempo = 50;
+        makeSound(7);
         digitalWrite(LED_GREEN_PIN, HIGH);
-        playMelody(happyBirthday, happyBirthdayCount);
-        tempo = 300;
         Serial.println("7 on");
     }
 
     else if (digitalRead(8) == HIGH) {
+        makeSound(8);
         digitalWrite(LED_BLUE_PIN, HIGH);
-        playMelody(jingleBell, jingleBellCount);
         Serial.println("8 on");
     }
 
     else if (digitalRead(9) == HIGH) {
+        makeSound(9);
         digitalWrite(LED_RED_PIN, HIGH);
-        playMelody(schoolBell, schoolBellCount);
         Serial.println("9 on");
     }
 
     else if (digitalRead(10) == HIGH) {
-        digitalWrite(LED_RED_PIN, HIGH);
-        digitalWrite(LED_BLUE_PIN, HIGH);
-        playMelody(littleStar, littleStarCount);
+        makeSound(10);
+        digitalWrite(LED_GREEN_PIN, HIGH);
         Serial.println("10 on");
     }
 
     else{
         noTone(BUZZER_PIN);              // 아무 입력이 없을때 2번 핀의 Tone 함수 사용 안함
-        Serial.println("off");
     }
 }
