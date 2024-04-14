@@ -28,7 +28,7 @@ LED를 사용해서 불빛을 발생시켜보고, 버튼을 눌렀을 때 원하
 
 ![main](./img/main.jpg)
 
-[동작 동영상](https://www.youtube.com/watch?v=RbDGxCBN8vQ)
+[아두이노 피아노 만들기 - 동작 영상](https://youtu.be/KpDT8Mqy63M?si=ZX8WL8OEM-Y9WUFr)
 
 ## 정리
 Duration: 0:01:00
