@@ -9,8 +9,3 @@
 5. 커밋 생성하여 푸쉬
 
 회로도는 https://www.tinkercad.com/dashboard
-
-## TO DO
-- 동작 동영상 촬영 및 업로드
-- 도전 과제 - 1, 멜로디
-- 도전 과제 - 2, 복불복
